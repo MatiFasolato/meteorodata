@@ -170,6 +170,23 @@
 <span><span class="co">#&gt; Warning: Removed 3 rows containing missing values or values outside the scale range</span></span>
 <span><span class="co">#&gt; (`geom_point()`).</span></span></code></pre></div>
 <p><img src="reference/figures/README-example-1.png" width="100%"></p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="fu"><a href="reference/tabla_resumen_temperatura.html">tabla_resumen_temperatura</a></span><span class="op">(</span><span class="va">NH_unidos</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'NH0910'</span>,<span class="st">'NH0437'</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Adjuntando el paquete: 'lubridate'</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     date, intersect, setdiff, union</span></span>
+<span><span class="co">#&gt; # A tibble: 2 × 9</span></span>
+<span><span class="co">#&gt;   id     observaciones_temperatura proporcion_NA temperatura_minima</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;                      &lt;int&gt;         &lt;dbl&gt;              &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 NH0437                     18738       0.0101                 2.1</span></span>
+<span><span class="co">#&gt; 2 NH0910                     15506       0.00302                0  </span></span>
+<span><span class="co">#&gt; # ℹ 5 more variables: temperatura_maxima &lt;dbl&gt;, temperatura_promedio &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   desviacion_estandar &lt;dbl&gt;, promedio_anual_temperatura &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   precipitacion_acumulada_mensual &lt;dbl&gt;</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
