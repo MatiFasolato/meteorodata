@@ -71,12 +71,6 @@
 <p>Este es un ejemplo básico que muestra cómo instalar la librería del paquete:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/MatiFasolato/meteorodata" class="external-link">meteorodata</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org" class="external-link">lubridate</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Adjuntando el paquete: 'lubridate'</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     date, intersect, setdiff, union</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/F_to_C.html">F_to_C</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 37.77778</span></span>
@@ -154,38 +148,18 @@
 <span><span class="fu"><a href="reference/C_to_F.html">C_to_F</a></span><span class="op">(</span><span class="fl">23</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 73.4</span></span>
 <span></span>
-<span><span class="va">grafico</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/grafico_temperatura_mensual.html">grafico_temperatura_mensual</a></span><span class="op">(</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"data_raw/NH0098.csv"</span><span class="op">)</span>,</span>
-<span>  colores <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="st">"yellow"</span><span class="op">)</span>,</span>
-<span>  titulo <span class="op">=</span> <span class="st">"Promedio Mensual de Temperatura para NH0098"</span></span>
-<span><span class="op">)</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Adjuntando el paquete: 'dplyr'</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:stats':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     filter, lag</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span>
-<span><span class="va">grafico</span></span>
-<span><span class="co">#&gt; Warning: Removed 3 rows containing missing values or values outside the scale range</span></span>
-<span><span class="co">#&gt; (`geom_line()`).</span></span>
-<span><span class="co">#&gt; `geom_line()`: Each group consists of only one observation.</span></span>
-<span><span class="co">#&gt; ℹ Do you need to adjust the group aesthetic?</span></span>
-<span><span class="co">#&gt; Warning: Removed 3 rows containing missing values or values outside the scale range</span></span>
-<span><span class="co">#&gt; (`geom_point()`).</span></span></code></pre></div>
+<span><span class="fu"><a href="reference/grafico_temperatura_mensual.html">grafico_temperatura_mensual</a></span><span class="op">(</span><span class="va">NH_unidos</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-example-1.png" width="100%"></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="reference/tabla_resumen_temperatura.html">tabla_resumen_temperatura</a></span><span class="op">(</span><span class="va">NH_unidos</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'NH0910'</span>,<span class="st">'NH0437'</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 2 × 9</span></span>
+<span><span class="co">#&gt; # A tibble: 2 × 7</span></span>
 <span><span class="co">#&gt;   id     observaciones_temperatura proporcion_NA temperatura_minima</span></span>
 <span><span class="co">#&gt;   &lt;chr&gt;                      &lt;int&gt;         &lt;dbl&gt;              &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt; 1 NH0437                     18738       0.0101                 2.1</span></span>
 <span><span class="co">#&gt; 2 NH0910                     15506       0.00302                0  </span></span>
-<span><span class="co">#&gt; # ℹ 5 more variables: temperatura_maxima &lt;dbl&gt;, temperatura_promedio &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   desviacion_estandar &lt;dbl&gt;, promedio_anual_temperatura &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   precipitacion_acumulada_mensual &lt;dbl&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 3 more variables: temperatura_maxima &lt;dbl&gt;, temperatura_promedio &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   desviacion_estandar &lt;dbl&gt;</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
