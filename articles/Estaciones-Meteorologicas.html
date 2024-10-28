@@ -66,24 +66,97 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/MatiFasolato/meteorodata" class="external-link">meteorodata</a></span><span class="op">)</span></span></code></pre></div>
+<p>Esta viñeta de prueba nos muestracómo se utiliza la función
+<code><a href="../reference/descargar_datos.html">descargar_datos()</a></code>:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">estacion_prueba</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/descargar_datos.html">descargar_datos</a></span><span class="op">(</span><span class="st">"NH0098"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Descargando y leyendo el archivo de estacion 'NH0098' en el directorio</span></span>
+<span><span class="co">#&gt; temporal.</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">estacion_prueba</span>,<span class="fl">5</span><span class="op">)</span></span>
+<span><span class="co">#&gt;       id      fecha temperatura_abrigo_150cm temperatura_abrigo_150cm_maxima</span></span>
+<span><span class="co">#&gt; 1 NH0098 1956-04-01                    13.65                            21.6</span></span>
+<span><span class="co">#&gt; 2 NH0098 1956-04-02                    16.75                            23.6</span></span>
+<span><span class="co">#&gt; 3 NH0098 1956-04-03                    19.00                            25.9</span></span>
+<span><span class="co">#&gt; 4 NH0098 1956-04-04                    17.55                            23.6</span></span>
+<span><span class="co">#&gt; 5 NH0098 1956-04-05                    20.00                            27.2</span></span>
+<span><span class="co">#&gt;   temperatura_abrigo_150cm_minima temperatura_intemperie_5cm_minima</span></span>
+<span><span class="co">#&gt; 1                             5.7                               4.1</span></span>
+<span><span class="co">#&gt; 2                             9.9                               8.4</span></span>
+<span><span class="co">#&gt; 3                            12.1                              10.8</span></span>
+<span><span class="co">#&gt; 4                            11.5                              10.5</span></span>
+<span><span class="co">#&gt; 5                            12.8                              11.1</span></span>
+<span><span class="co">#&gt;   temperatura_intemperie_50cm_minima temperatura_suelo_5cm_media</span></span>
+<span><span class="co">#&gt; 1                                 NA                          NA</span></span>
+<span><span class="co">#&gt; 2                                 NA                          NA</span></span>
+<span><span class="co">#&gt; 3                                 NA                          NA</span></span>
+<span><span class="co">#&gt; 4                                 NA                          NA</span></span>
+<span><span class="co">#&gt; 5                                 NA                          NA</span></span>
+<span><span class="co">#&gt;   temperatura_suelo_10cm_media temperatura_inte_5cm</span></span>
+<span><span class="co">#&gt; 1                           NA                   NA</span></span>
+<span><span class="co">#&gt; 2                           NA                   NA</span></span>
+<span><span class="co">#&gt; 3                           NA                   NA</span></span>
+<span><span class="co">#&gt; 4                           NA                   NA</span></span>
+<span><span class="co">#&gt; 5                           NA                   NA</span></span>
+<span><span class="co">#&gt;   temperatura_intemperie_150cm_minima humedad_suelo precipitacion_pluviometrica</span></span>
+<span><span class="co">#&gt; 1                                  NA            NA                           0</span></span>
+<span><span class="co">#&gt; 2                                  NA            NA                           0</span></span>
+<span><span class="co">#&gt; 3                                  NA            NA                           0</span></span>
+<span><span class="co">#&gt; 4                                  NA            NA                           0</span></span>
+<span><span class="co">#&gt; 5                                  NA            NA                           0</span></span>
+<span><span class="co">#&gt;   granizo nieve heliofania_efectiva heliofania_relativa tesion_vapor_media</span></span>
+<span><span class="co">#&gt; 1       0     0                  NA                  NA                8.3</span></span>
+<span><span class="co">#&gt; 2       0     0                  NA                  NA               10.4</span></span>
+<span><span class="co">#&gt; 3       0     0                  NA                  NA               13.2</span></span>
+<span><span class="co">#&gt; 4       0     0                  NA                  NA               10.6</span></span>
+<span><span class="co">#&gt; 5       0     0                  NA                  NA               11.6</span></span>
+<span><span class="co">#&gt;   humedad_media humedad_media_8_14_20 rocio_medio duracion_follaje_mojado</span></span>
+<span><span class="co">#&gt; 1            NA                    62         4.3                      NA</span></span>
+<span><span class="co">#&gt; 2            NA                    71         7.5                      NA</span></span>
+<span><span class="co">#&gt; 3            NA                    78        11.1                      NA</span></span>
+<span><span class="co">#&gt; 4            NA                    70         7.8                      NA</span></span>
+<span><span class="co">#&gt; 5            NA                    66         9.2                      NA</span></span>
+<span><span class="co">#&gt;   velocidad_viento_200cm_media direccion_viento_200cm</span></span>
+<span><span class="co">#&gt; 1                          3.2                     NA</span></span>
+<span><span class="co">#&gt; 2                         10.4                     NA</span></span>
+<span><span class="co">#&gt; 3                          7.2                     NA</span></span>
+<span><span class="co">#&gt; 4                          7.2                     NA</span></span>
+<span><span class="co">#&gt; 5                          5.6                     NA</span></span>
+<span><span class="co">#&gt;   velocidad_viento_1000cm_media direccion_viento_1000cm velocidad_viento_maxima</span></span>
+<span><span class="co">#&gt; 1                             4                                              NA</span></span>
+<span><span class="co">#&gt; 2                            13                                              NA</span></span>
+<span><span class="co">#&gt; 3                             9                                              NA</span></span>
+<span><span class="co">#&gt; 4                             9                                              NA</span></span>
+<span><span class="co">#&gt; 5                             7                                              NA</span></span>
+<span><span class="co">#&gt;   presion_media radiacion_global radiacion_neta evaporacion_tanque</span></span>
+<span><span class="co">#&gt; 1            NA               NA             NA                 NA</span></span>
+<span><span class="co">#&gt; 2            NA               NA             NA                 NA</span></span>
+<span><span class="co">#&gt; 3            NA               NA             NA                 NA</span></span>
+<span><span class="co">#&gt; 4            NA               NA             NA                 NA</span></span>
+<span><span class="co">#&gt; 5            NA               NA             NA                 NA</span></span>
+<span><span class="co">#&gt;   evapotranspiracion_potencial profundidad_napa horas_frio unidad_frio</span></span>
+<span><span class="co">#&gt; 1                           NA               NA   1.962264          NA</span></span>
+<span><span class="co">#&gt; 2                           NA               NA   0.000000          NA</span></span>
+<span><span class="co">#&gt; 3                           NA               NA   0.000000          NA</span></span>
+<span><span class="co">#&gt; 4                           NA               NA   0.000000          NA</span></span>
+<span><span class="co">#&gt; 5                           NA               NA   0.000000          NA</span></span></code></pre></div>
 <p>Esta viñeta de prueba nos permite mostrar como funciona la función
 <code><a href="../reference/F_to_C.html">F_to_C()</a></code>:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/F_to_C.html">F_to_C</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 37.77778</span></span></code></pre></div>
 <p>Esta viñeta de prueba nos permite mostrar como funciona la función
 <code><a href="../reference/C_to_F.html">C_to_F()</a></code>:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/C_to_F.html">C_to_F</a></span><span class="op">(</span><span class="fl">23</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 73.4</span></span></code></pre></div>
 <p>Esta viñeta de prueba nos permite mostrar como funciona la función
 <code>grafico_temp_mensual</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/grafico_temperatura_mensual.html">grafico_temperatura_mensual</a></span><span class="op">(</span><span class="va">NH_unidos</span><span class="op">)</span></span></code></pre></div>
-<p><img src="Estaciones-Meteorologicas_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
+<p><img src="Estaciones-Meteorologicas_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 <p>Esta viñeta de prueba nos permite mostrar como funciona la función
 <code>tabla_resumen</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/tabla_resumen_temperatura.html">tabla_resumen_temperatura</a></span><span class="op">(</span><span class="va">NH_unidos</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'NH0910'</span>,<span class="st">'NH0437'</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 7</span></span></span>
 <span><span class="co">#&gt;   id     observaciones_temperatura proporcion_NA temperatura_minima</span></span>
