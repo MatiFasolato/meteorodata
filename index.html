@@ -100,12 +100,28 @@
 <div class="section level2">
 <h2 id="uso-de-las-funciones">Uso de las funciones:<a class="anchor" aria-label="anchor" href="#uso-de-las-funciones"></a>
 </h2>
-<p><code>{r} F_to_C(100)</code></p>
-<p><code>{r} estacion_met &lt;- descargar_datos("NH0098")</code></p>
-<p><code>{r} C_to_F(23)</code></p>
-<p><code>{r} grafico_temperatura_mensual(NH_unidos)</code></p>
-<p><img src="reference/figures/README-example-1.png" width="100%"></p>
-<p><code>{r} tabla_resumen_temperatura(NH_unidos,c('NH0910','NH0437'))</code></p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/F_to_C.html">F_to_C</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 37.77778</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">estacion_met</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/descargar_datos.html">descargar_datos</a></span><span class="op">(</span><span class="st">"NH0098"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Descargando y leyendo el archivo de estacion 'NH0098' en el directorio</span></span>
+<span><span class="co">#&gt; temporal.</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/C_to_F.html">C_to_F</a></span><span class="op">(</span><span class="fl">23</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 73.4</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/grafico_temperatura_mensual.html">grafico_temperatura_mensual</a></span><span class="op">(</span><span class="va">NH_unidos</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-6-1.png" width="100%"></p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/tabla_resumen_temperatura.html">tabla_resumen_temperatura</a></span><span class="op">(</span><span class="va">NH_unidos</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'NH0910'</span>,<span class="st">'NH0437'</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 2 × 7</span></span>
+<span><span class="co">#&gt;   id     observaciones_temperatura proporcion_NA temperatura_minima</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;                      &lt;int&gt;         &lt;dbl&gt;              &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 NH0437                     18738       0.0101                -5.6</span></span>
+<span><span class="co">#&gt; 2 NH0910                     15506       0.00302               -8.5</span></span>
+<span><span class="co">#&gt; # ℹ 3 more variables: temperatura_maxima &lt;dbl&gt;, temperatura_promedio &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   desviacion_estandar &lt;dbl&gt;</span></span></code></pre></div>
 <div class="section level3">
 <h3 id="autores-del-paquete">Autores del paquete:<a class="anchor" aria-label="anchor" href="#autores-del-paquete"></a>
 </h3>
