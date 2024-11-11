@@ -79,14 +79,10 @@
 <h3 id="funciones">Funciones:<a class="anchor" aria-label="anchor" href="#funciones"></a>
 </h3>
 <ol style="list-style-type: decimal">
-<li>
-<strong><code>C_to_F</code></strong>: Toma un valor numérico de la temperatura en Centigrados y calcula la equivalencia en grados fahrenheit.</li>
-<li>
-<strong><code>F_to_C</code></strong> : Toma un valor numérico de la temperatura en Fahrenheit y calcula la equivalencia en grados centígrados.</li>
-<li>
-<strong><code>tabla_resumen_temperatura</code></strong>: Recibe un dataframe que contiene informacion acerca de todas las estaciones meteorologicas y de acuerdo a la estacion especificada calcula medidas significativas.</li>
-<li>
-<strong><code>grafico_temperatura_mensual</code></strong>: Recibe un data frame con datos de una o mas estaciones y devuelve un grafico con el promedio mensual de la temperatura de abrigo a 150 cm.</li>
+<li><p><strong><code>C_to_F</code></strong>: Esta función recibe como entrada un valor numérico que representa la temperatura en grados Celsiud y convierte dicha temperatura en su equivalente a grados Fahrenheit. La función valida primero que el valor de entrada sea un numero, ya que si no lo es nos devuelve un mensaje de error indicando que se debe ingresar un valor numerico. Para obtener la equivalencia a grados Fahrenheit, la funcion utiliza la formula: (temp_centigrado x <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>9</mn><mn>5</mn></mfrac><annotation encoding="application/x-tex">\frac{9}{5}</annotation></semantics></math>) + 32, donde temp_centigrado representa a la temperatura en Celcius.</p></li>
+<li><p><strong><code>F_to_C</code></strong> : Esta función recibe un valor numérico que representa la temperatura en grados Fahrenheit y convierte dicha temperatura en su equivalente a grados Celsius. La función valida primero que el valor de entrada sea numérico, ya que si no lo es, genera un mensaje de error . La fórmula utilizada para obtener la temperatura en Celsius es : (temp_fahrenheit - 32) x <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>5</mn><mn>9</mn></mfrac><annotation encoding="application/x-tex">\frac{5}{9}</annotation></semantics></math> , donde temp_fahrenheit representa a la temperatura en Fahrenheit.</p></li>
+<li><p><strong><code>tabla_resumen_temperatura</code></strong>: Esta función recibe un dataframe que contiene informacion acerca de todas las estaciones meteorologicas y de acuerdo a la estacion especificada calcula medidas significativas, como son el promedio (media), mínimo, máximo, mediana y desviación estándar de la temperatura y otras variables relevantes. El resultado devuelto es una tabla resumen con estas métricas, que permite comparar los datos climáticos de diferentes estaciones</p></li>
+<li><p><strong><code>grafico_temperatura_mensual</code></strong>: Esta función recibe un data frame con datos de una o mas estaciones y agrupa los datos por mes y calcula el promedio de la temperatura para cada mes, lo que permite observar tendencias y variaciones a lo largo del año. Luego, genera un gráfico que muestra estos promedios mensuales, con el eje x representando los meses y el eje y la temperatura promedio en grados Celsius.</p></li>
 </ol>
 </div>
 </div>
@@ -98,30 +94,16 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/MatiFasolato/meteorodata" class="external-link">meteorodata</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="uso-de-las-funciones">Uso de las funciones:<a class="anchor" aria-label="anchor" href="#uso-de-las-funciones"></a>
+<h2 id="uso-de-funciones">Uso de funciones:<a class="anchor" aria-label="anchor" href="#uso-de-funciones"></a>
 </h2>
+<div class="section level4">
+<h4 id="a-continuacion-se-mostrará-un-ejemplo-de-como-hacer-uso-de-las-función-f_to_c-">A continuacion se mostrará un ejemplo de como hacer uso de las función <code>F_to_C()</code> :<a class="anchor" aria-label="anchor" href="#a-continuacion-se-mostrar%C3%A1-un-ejemplo-de-como-hacer-uso-de-las-funci%C3%B3n-f_to_c-"></a>
+</h4>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/F_to_C.html">F_to_C</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 37.77778</span></span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">estacion_met</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/descargar_datos.html">descargar_datos</a></span><span class="op">(</span><span class="st">"NH0098"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Descargando y leyendo el archivo de estacion 'NH0098' en el directorio</span></span>
-<span><span class="co">#&gt; temporal.</span></span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/C_to_F.html">C_to_F</a></span><span class="op">(</span><span class="fl">23</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 73.4</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/grafico_temperatura_mensual.html">grafico_temperatura_mensual</a></span><span class="op">(</span><span class="va">NH_unidos</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-6-1.png" width="100%"></p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/tabla_resumen_temperatura.html">tabla_resumen_temperatura</a></span><span class="op">(</span><span class="va">NH_unidos</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'NH0910'</span>,<span class="st">'NH0437'</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 2 × 7</span></span>
-<span><span class="co">#&gt;   id     observaciones_temperatura proporcion_NA temperatura_minima</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;                      &lt;int&gt;         &lt;dbl&gt;              &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 NH0437                     18738       0.0101                -5.6</span></span>
-<span><span class="co">#&gt; 2 NH0910                     15506       0.00302               -8.5</span></span>
-<span><span class="co">#&gt; # ℹ 3 more variables: temperatura_maxima &lt;dbl&gt;, temperatura_promedio &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   desviacion_estandar &lt;dbl&gt;</span></span></code></pre></div>
+<p>Si desea ver el uso de las funciones restantes puede ingresar a nuestra página: <a href="https://matifasolato.github.io/meteorodata/">meteorodata</a></p>
+</div>
 <div class="section level3">
 <h3 id="autores-del-paquete">Autores del paquete:<a class="anchor" aria-label="anchor" href="#autores-del-paquete"></a>
 </h3>
